@@ -1,2 +1,3 @@
-# music-center
+# Music Center
+
 A song list application
