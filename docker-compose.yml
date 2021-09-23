@@ -1,0 +1,14 @@
+services:
+  server:
+    build: ./server
+    ports:
+      - ${SERVER_PORT}:5000
+    volumes:
+      - ./server:/usr/src/app
+  db:
+    image: postgres:alpine
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    ports:
+     - 5432:5432
