@@ -1,14 +1,11 @@
 import express from 'express';
 import { songRepository } from '../../repositories';
+import { CreateSongInput } from '../../types';
+import { createSongSchema } from './validation';
 
 const router = express.Router();
 
-type ValidationError = {
-  property: string;
-  message: string;
-};
-
-router.get('/', async (req, res) => {
+router.get('/', async (_, res) => {
   try {
     const songs = await songRepository.getAllSongs();
     res.send({
@@ -36,42 +33,21 @@ router.get('/:id', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-  const errors: ValidationError[] = [];
+  const { error, value } = createSongSchema.validate(req.body);
 
-  if (!req.body.title) {
-    errors.push({
-      property: 'title',
-      message: 'A title is required',
-    });
-  }
-
-  if (req.body.artist && typeof req.body.artist !== 'string') {
-    errors.push({
-      property: 'artist',
-      message: 'Incorrect type. Expected string',
-    });
-  }
-
-  if (req.body.key && typeof req.body.key !== 'string') {
-    errors.push({
-      property: 'key',
-      message: 'Incorrect type. Expected string',
-    });
-  }
-
-  if (errors.length) {
+  if (error) {
     res.status(400).send({
-      errors,
+      error: {
+        message: error.message,
+      },
     });
     return;
   }
 
+  const validSong = value as CreateSongInput;
+
   try {
-    const result = await songRepository.createSong({
-      title: req.body.title,
-      artist: req.body.artist,
-      key: req.body.key,
-    });
+    const result = await songRepository.createSong(validSong);
 
     res.send(result);
   } catch (err) {

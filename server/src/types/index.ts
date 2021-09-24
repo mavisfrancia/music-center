@@ -1,5 +1,5 @@
-import { Prisma } from '@prisma/client';
+import { Prisma, Tempo } from '@prisma/client';
 
 type CreateSongInput = Prisma.SongCreateInput;
 
-export { CreateSongInput };
+export { CreateSongInput, Tempo };
