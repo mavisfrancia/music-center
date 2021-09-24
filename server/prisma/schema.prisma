@@ -1,6 +1,6 @@
 generator client {
   provider      = "prisma-client-js"
-  binaryTargets = ["debian-openssl-1.1.x"]
+  binaryTargets = ["native", "debian-openssl-1.1.x"]
 }
 
 datasource db {
@@ -8,9 +8,18 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum Tempo {
+  FAST
+  MEDIUM
+  SLOW
+}
+
 model Song {
-  id     String @id @default(uuid())
-  title  String
-  artist String?
-  key    String?
+  id               String  @id @default(uuid())
+  title            String
+  artist           String?
+  tempo            Tempo?
+  range            Int?
+  alternativeRange Int?
+  key              String?
 }
