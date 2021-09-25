@@ -9,8 +9,11 @@ A song list application
 - [Express](https://expressjs.com/)
 - [Prisma](https://www.prisma.io/)
 - [Joi](https://joi.dev/)
+- [Docker](https://www.docker.com/)
 
 ## Build the Backend Application (first time)
+
+Prerequisites: You must have Docker and Node installed.
 
 1. Navigate inside the **server** directory
 2. Run `npm i`
