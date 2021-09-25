@@ -30,7 +30,5 @@ jobs:
         cache: 'npm'
     - run: npm ci
       working-directory: ./server
-    - run: npm run validate
-      working-directory: ./server
-    - run: npm test
+    - run: npm run ci:validate
       working-directory: ./server
