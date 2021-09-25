@@ -29,3 +29,5 @@ A song list application
 If you have already successfully built the backend, you just need to run `docker-compose up` to start up the application again. To stop the application you can run `docker-compose stop` or simply kill the process (<kbd>Ctrl</kbd> + <kbd>C</kbd>)
 
 Note: Running `docker-compose down` will remove the docker containers and images, i.e. all previous data in the database docker container will be lost, so make sure that's actually what you want to do.
+
+Making a test change that shouldn't require a rebuild.
