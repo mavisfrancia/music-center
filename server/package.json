@@ -4,6 +4,8 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
+    "db:viz": "prisma studio",
+    "db:init": "prisma migrate deploy",
     "start": "ts-node-dev --respawn --transpile-only --exit-child src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
