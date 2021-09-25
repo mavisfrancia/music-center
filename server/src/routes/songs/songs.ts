@@ -46,8 +46,6 @@ router.post('/', async (req, res) => {
 
   const validSong = value as CreateSongInput;
 
-  console.log(validSong.foo);
-
   try {
     const result = await songRepository.createSong(validSong);
 
