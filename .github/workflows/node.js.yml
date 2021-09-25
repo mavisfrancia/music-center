@@ -6,13 +6,9 @@ name: Node.js CI
 on:
   push:
     branches: [ main ]
-    paths:
-      - ./server/**
   pull_request:
     types: [assigned, opened, synchronize, reopened, edited]
     branches: [ main ]
-    paths:
-      - ./server/**
 
 jobs:
   build:
