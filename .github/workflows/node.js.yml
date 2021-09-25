@@ -24,14 +24,13 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
+    - uses: actions/checkout@v2
     - uses: dorny/paths-filter@v2
       id: filter
       with:
         filters: |
           server:
             - 'server/**'
-              
-    - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
       if: ${{ steps.filter.outputs.server == 'true' }}
       uses: actions/setup-node@v2
