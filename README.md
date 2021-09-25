@@ -30,4 +30,4 @@ If you have already successfully built the backend, you just need to run `docker
 
 Note: Running `docker-compose down` will remove the docker containers and images, i.e. all previous data in the database docker container will be lost, so make sure that's actually what you want to do.
 
-Making a test change that shouldn't require a rebuild. Another change.
+Making a test change that shouldn't require a rebuild. Another change
