@@ -6,11 +6,9 @@ name: Node.js CI
 on:
   push:
     branches: [ main ]
-#    paths: './server/**'
   pull_request:
     types: [assigned, opened, synchronize, reopened, edited]
     branches: [ main ]
-#    paths: './server/**'
 
 jobs:
   build:
@@ -26,12 +24,22 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
+    - uses: dorny/paths-filter@v2
+      id: filter
+      with:
+        filters: |
+          server:
+            - 'server/**.ts'
+              
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
+      if: ${{ steps.filter.outputs.server == 'true' }}
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
         cache-dependency-path: server/package-lock.json
     - run: npm ci
+      if: ${{ steps.filter.outputs.server == 'true' }}
     - run: npm run ci:validate
+      if: ${{ steps.filter.outputs.server == 'true' }}
