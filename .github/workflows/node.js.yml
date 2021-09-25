@@ -6,10 +6,10 @@ name: Node.js CI
 on:
   push:
     branches: [ main ]
-    paths: 'server/**'
+#    paths: 'server/**'
   pull_request:
     branches: [ main ]
-    paths: 'server/**'
+#    paths: 'server/**'
 
 jobs:
   build:
@@ -29,6 +29,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
-      working-directory: ./server
+      working-directory: server
     - run: npm run ci:validate
-      working-directory: ./server
+      working-directory: server
