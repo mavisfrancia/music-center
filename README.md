@@ -15,18 +15,17 @@ A song list application
 
 Prerequisites: You must have Docker and Node installed.
 
-1. Navigate inside the **server** directory
-2. Run `npm i`
-3. Set the following environment variables using your method of choice (e.g. by exporting them in your `.bashrc` or `.zshrc`, or using a dotenv library)
-
-| Name              | Description                         | Value                                                                                       |
+Set the following environment variables using your method of choice (e.g. by exporting them in your `.bashrc` or `.zshrc`, or using a dotenv library)
+| Name | Description | Value |
 | ----------------- | ----------------------------------- | ------------------------------------------------------------------------------------------- |
-| POSTGRES_PASSWORD | Password for connecting to database | _any password you want_                                                                     |
-| DATABASE_URL      | URL for connecting to database      | `postgresql://postgres:${POSTGRES_PASSWORD}@localhost:5432/music_center?schema=public`      |
+| POSTGRES*PASSWORD | Password for connecting to database | \_any password you want* |
+| DATABASE_URL | URL for connecting to database | `postgresql://postgres:${POSTGRES_PASSWORD}@localhost:5432/music_center?schema=public` |
 | TEST_DATABASE_URL | URL for connecting to test database | `postgresql://postgres:${POSTGRES_PASSWORD}@localhost:5433/music_center_test?schema=public` |
 
-4. Run `docker-compose up` to start the server and database containers.
-5. Open another terminal and run `npm run db:init` to initialize the database.
+1. Open a terminal and navigate into the `server` directory
+2. Run `npm i`
+3. Run `docker-compose up` to start the server and database containers.
+4. Open another terminal and run `npm run db:init` to initialize the database.
 
 At this point the application needs to restart in order to connect to the newly created database. You can restart it either by making a code change and saving, or stopping and starting the containers.
 
