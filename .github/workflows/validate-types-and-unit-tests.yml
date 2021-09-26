@@ -25,12 +25,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - uses: dorny/paths-filter@v2
-      id: filter
-      with:
-        filters: |
-          server:
-            - 'server/**'
+    # - uses: dorny/paths-filter@v2
+    #   id: filter
+    #   with:
+    #     filters: |
+    #       server:
+    #         - 'server/**'
     - name: Use Node.js ${{ matrix.node-version }}
       if: ${{ steps.filter.outputs.server == 'true' }}
       uses: actions/setup-node@v2
@@ -38,11 +38,11 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
         cache-dependency-path: server/package-lock.json
-    - run: npm ci
-      if: ${{ steps.filter.outputs.server == 'true' }}
-    - run: npm run ci:validate
-      if: ${{ steps.filter.outputs.server == 'true' }}
-    - run: ls -a
-    - run: chmod +x wait-for-test-db.sh
+    # - run: npm ci
+    #   if: ${{ steps.filter.outputs.server == 'true' }}
+    # - run: npm run ci:validate
+    #   if: ${{ steps.filter.outputs.server == 'true' }}
+    # - run: ls -a
+    # - run: chmod +x wait-for-test-db.sh
     - run: npm run test:int
       # if: ${{ steps.filter.outputs.server == 'true' }}

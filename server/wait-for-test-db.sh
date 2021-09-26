@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 # https://www.marksayson.com/blog/wait-until-docker-containers-initialized/
 set -e
 
