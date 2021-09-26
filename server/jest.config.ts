@@ -23,7 +23,7 @@ export default {
   // collectCoverageFrom: undefined,
 
   // The directory where Jest should output its coverage files
-  coverageDirectory: "coverage",
+  coverageDirectory: 'coverage',
 
   // An array of regexp pattern strings used to skip coverage collection
   // coveragePathIgnorePatterns: [
@@ -81,7 +81,13 @@ export default {
   // ],
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
-  // moduleNameMapper: {},
+  moduleNameMapper: {
+    '^\\$app(.*)$': '<rootDir>/src/app$1',
+    '^\\$repositories(.*)$': '<rootDir>/src/repositories$1',
+    '^\\$routes(.*)$': '<rootDir>/src/routes$1',
+    '^\\$services(.*)$': '<rootDir>/src/services$1',
+    '^\\$types(.*)$': '<rootDir>/src/types$1',
+  },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
   // modulePathIgnorePatterns: [],

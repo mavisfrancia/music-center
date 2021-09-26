@@ -1,6 +1,6 @@
 import express from 'express';
-import { songRepository } from '../../repositories';
-import { CreateSongInput } from '../../types';
+import { songRepository } from '$repositories';
+import { CreateSongInput } from '$types';
 import { createSongSchema } from './validation';
 
 const router = express.Router();
