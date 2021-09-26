@@ -38,8 +38,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
         cache-dependency-path: server/package-lock.json
-    # - run: npm ci
-    #   if: ${{ steps.filter.outputs.server == 'true' }}
+    - run: npm ci
     # - run: npm run ci:validate
     #   if: ${{ steps.filter.outputs.server == 'true' }}
     # - run: ls -a
