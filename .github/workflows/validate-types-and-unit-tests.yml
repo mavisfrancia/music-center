@@ -42,5 +42,6 @@ jobs:
       if: ${{ steps.filter.outputs.server == 'true' }}
     - run: npm run ci:validate
       if: ${{ steps.filter.outputs.server == 'true' }}
+    - run: ls -a
     - run: npm run test:int
       # if: ${{ steps.filter.outputs.server == 'true' }}
