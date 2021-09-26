@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 # https://www.marksayson.com/blog/wait-until-docker-containers-initialized/
 set -e
 
@@ -8,7 +8,7 @@ MAX_TRIES=10
 # Return true-like values if and only if logs
 # contain the expected "ready" line
 function dbIsReady() {
-  docker-compose logs test_db | grep "database system is ready to accept connections"
+  docker-compose -f docker-compose.test.yml logs test_db | grep "database system is ready to accept connections"
 }
 
 function waitUntilServiceIsReady() {

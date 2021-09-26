@@ -42,3 +42,8 @@ jobs:
       if: ${{ steps.filter.outputs.server == 'true' }}
     - run: npm run ci:validate
       if: ${{ steps.filter.outputs.server == 'true' }}
+    - run: npm run ci:test:int
+      if: ${{ steps.filter.outputs.server == 'true' }}
+      env:
+        POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
+        DATABASE_URL: postgresql://postgres:${{ secrets.POSTGRES_PASSWORD }}@localhost:5433/music_center_test?schema=public
