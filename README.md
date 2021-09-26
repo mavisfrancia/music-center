@@ -9,17 +9,21 @@ A song list application
 - [Express](https://expressjs.com/)
 - [Prisma](https://www.prisma.io/)
 - [Joi](https://joi.dev/)
+- [Docker](https://www.docker.com/)
 
 ## Build the Backend Application (first time)
 
+Prerequisites: You must have Docker and Node installed.
+
 1. Navigate inside the **server** directory
 2. Run `npm i`
-2. Set the following environment variables using your method of choice (e.g. by exporting them in your `.bashrc` or `.zshrc`, or using a dotenv library)
+3. Set the following environment variables using your method of choice (e.g. by exporting them in your `.bashrc` or `.zshrc`, or using a dotenv library)
 
-| Name              | Description                         | Value                                                                                  |
-| ----------------- | ----------------------------------- | -------------------------------------------------------------------------------------- |
-| POSTGRES_PASSWORD | Password for connecting to database | _any password you want_                                                                |
-| DATABASE_URL      | URL for connecting to database      | `postgresql://postgres:${POSTGRES_PASSWORD}@localhost:5432/music_center?schema=public` |
+| Name              | Description                         | Value                                                                                       |
+| ----------------- | ----------------------------------- | ------------------------------------------------------------------------------------------- |
+| POSTGRES_PASSWORD | Password for connecting to database | _any password you want_                                                                     |
+| DATABASE_URL      | URL for connecting to database      | `postgresql://postgres:${POSTGRES_PASSWORD}@localhost:5432/music_center?schema=public`      |
+| TEST_DATABASE_URL | URL for connecting to test database | `postgresql://postgres:${POSTGRES_PASSWORD}@localhost:5433/music_center_test?schema=public` |
 
 4. Run `docker-compose up` to start the server and database containers.
 5. Open another terminal and run `npm run db:init` to initialize the database.
