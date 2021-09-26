@@ -1,4 +1,4 @@
-import { Tempo } from '../../types';
+import { Tempo } from '$types';
 import { createSongSchema } from './validation';
 
 describe('validate createSongSchema', () => {

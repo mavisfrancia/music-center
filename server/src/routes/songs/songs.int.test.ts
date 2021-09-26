@@ -1,7 +1,7 @@
-import { Tempo } from '../../types';
+import { Tempo } from '$types';
 import request from 'supertest';
-import app from '../../app';
-import { dbClient } from '../../services';
+import app from '$app';
+import { dbClient } from '$services';
 
 beforeEach(async () => {
   await dbClient.song.deleteMany();
