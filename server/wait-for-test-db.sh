@@ -8,7 +8,7 @@ MAX_TRIES=10
 # Return true-like values if and only if logs
 # contain the expected "ready" line
 function dbIsReady() {
-  docker logs server_test_db_1 | grep "database system is ready to accept connections"
+  docker-compose logs test_db | grep "database system is ready to accept connections"
 }
 
 function waitUntilServiceIsReady() {
