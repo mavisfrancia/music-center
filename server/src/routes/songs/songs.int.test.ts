@@ -52,7 +52,7 @@ describe('GET /songs/:id', () => {
       });
   });
 
-  test('response with 404 error if song is not found', async () => {
+  test('responds with 404 error if song is not found', async () => {
     await dbClient.song.create({
       data: {
         title: 'Test Song',

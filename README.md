@@ -28,8 +28,10 @@ Prerequisites: You must have Docker and Node installed.
 4. Run `docker-compose up` to start the server and database containers.
 5. Open another terminal and run `npm run db:init` to initialize the database.
 
+At this point the application needs to restart in order to connect to the newly created database. You can restart it either by making a code change and saving, or stopping and starting the containers.
+
 ## Run the Backend Application (returning)
 
-If you have already successfully built the backend, you just need to run `docker-compose up` to start up the application again. To stop the application you can run `docker-compose stop` or simply kill the process (<kbd>Ctrl</kbd> + <kbd>C</kbd>)
+If you have already successfully built the backend, you just need to run `docker-compose up` to start up the application again.
 
 Note: Running `docker-compose down` will remove the docker containers and images, i.e. all previous data in the database docker container will be lost, so make sure that's actually what you want to do.
