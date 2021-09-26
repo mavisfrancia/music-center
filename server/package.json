@@ -11,7 +11,7 @@
     "ci:test:int": "$npm_execpath run test:db:init && jest .int. -i && $npm_execpath run test:db:rm",
     "ci:validate": "npm-run-all ci:types ci:test",
     "start:dev": "ts-node-dev --respawn --transpile-only --exit-child src/index.ts",
-    "test:db:init": "docker-compose -f docker-compose.test.yml up -d && docker-compose -f docker-compose.test.yml ps --services && bash ./wait-for-test-db.sh && $npm_execpath run db:init",
+    "test:db:init": "docker-compose -f docker-compose.test.yml up -d && ./wait-for-test-db.sh && $npm_execpath run db:init",
     "test:db:rm": "docker-compose -f docker-compose.test.yml rm -fs test_db",
     "test:int": "(DATABASE_URL=${TEST_DATABASE_URL} && $npm_execpath run test:db:init && jest .int. -i && $npm_execpath run test:db:rm)",
     "test": "jest --testPathIgnorePatterns=.int."
