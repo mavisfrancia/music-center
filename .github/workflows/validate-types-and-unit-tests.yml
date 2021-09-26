@@ -50,7 +50,7 @@ jobs:
     # - run: docker ps -a
     # - run: docker-compose -f docker-compose.test.yml ps --services
     # - run: docker logs server_test_db_1
-    - run: npm run test:int
+    - run: npm run ci:test:int
       env:
         POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
         DATABASE_URL: postgresql://postgres:${{ secrets.POSTGRES_PASSWORD }}@localhost:5433/music_center_test?schema=public
