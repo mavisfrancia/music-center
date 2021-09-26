@@ -44,6 +44,10 @@ jobs:
     #   if: ${{ steps.filter.outputs.server == 'true' }}
     # - run: ls -a
     # - run: chmod +x wait-for-test-db.sh
+    - run: docker-compose -f docker-compose.test.yml up
+      env:
+        POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
+        TEST_DATABASE_URL: postgresql://postgres:${POSTGRES_PASSWORD}@localhost:5433/music_center_test?schema=public
     - run: npm run test:int
       env:
         POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
