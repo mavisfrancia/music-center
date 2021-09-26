@@ -9,7 +9,10 @@
     "ci:types": "tsc --noEmit",
     "ci:test": "jest --ci",
     "ci:validate": "npm-run-all ci:types ci:test",
-    "start": "ts-node-dev --respawn --transpile-only --exit-child src/index.ts",
+    "start:dev": "ts-node-dev --respawn --transpile-only --exit-child src/index.ts",
+    "test:db:init": "docker-compose -f docker-compose.test.yml up -d && ./wait-for-test-db.sh && $npm_execpath run db:init",
+    "test:db:rm": "docker-compose -f docker-compose.test.yml rm -fs test_db",
+    "test:int": "(DATABASE_URL=${TEST_DATABASE_URL} && $npm_execpath run test:db:init && jest .int. -i && $npm_execpath run test:db:rm)",
     "test": "jest"
   },
   "author": "Mavis Francia (https://github.com/mavisfrancia)",
@@ -26,10 +29,12 @@
     "@babel/preset-typescript": "^7.15.0",
     "@types/express": "^4.17.13",
     "@types/jest": "^27.0.2",
+    "@types/supertest": "^2.0.11",
     "babel-jest": "^27.2.1",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.3.2",
     "prisma": "^3.1.1",
+    "supertest": "^6.1.6",
     "ts-node-dev": "^1.1.8",
     "typescript": "^4.4.2"
   }

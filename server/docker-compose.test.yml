@@ -1,0 +1,13 @@
+services:
+  test_db:
+    image: postgres:alpine
+    restart: always
+    ports:
+      - 5433:5432
+    environment:
+      - POSTGRES_PASSWORD
+    networks:
+      - test
+
+networks:
+  test:
