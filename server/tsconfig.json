@@ -9,7 +9,11 @@
     "outDir": "dist",
     "baseUrl": ".",
     "paths": {
-      "*": ["node_modules/*"]
+      "$app": ["src/app"],
+      "$repositories": ["src/repositories"],
+      "$routes": ["src/routes"],
+      "$services": ["src/services"],
+      "$types": ["src/types"]
     }
   },
   "include": ["src/**/*"]

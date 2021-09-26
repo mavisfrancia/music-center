@@ -1,5 +1,5 @@
 import express from 'express';
-import { songs } from './routes';
+import { songs } from '$routes';
 
 const app = express();
 

@@ -1,5 +1,5 @@
 import Joi from 'joi';
-import { CreateSongInput, Tempo } from '../../types';
+import { CreateSongInput, Tempo } from '$types';
 
 export const createSongSchema = Joi.object<CreateSongInput>({
   title: Joi.string().required(),
