@@ -7,7 +7,7 @@
     "db:viz": "prisma studio",
     "db:init": "prisma migrate deploy",
     "ci:types": "tsc --noEmit",
-    "ci:test": "jest --ci",
+    "ci:test": "jest --ci --testPathIgnorePatterns=.int.",
     "ci:validate": "npm-run-all ci:types ci:test",
     "start:dev": "ts-node-dev --respawn --transpile-only --exit-child src/index.ts",
     "test:db:init": "docker-compose -f docker-compose.test.yml up -d && ./wait-for-test-db.sh && $npm_execpath run db:init",
