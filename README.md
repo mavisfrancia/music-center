@@ -16,10 +16,11 @@ A song list application
 Prerequisites: You must have Docker and Node installed.
 
 Set the following environment variables using your method of choice (e.g. by exporting them in your `.bashrc` or `.zshrc`, or using a dotenv library)
-| Name | Description | Value |
+
+| Name              | Description                         | Value                                                                                       |
 | ----------------- | ----------------------------------- | ------------------------------------------------------------------------------------------- |
-| POSTGRES*PASSWORD | Password for connecting to database | \_any password you want* |
-| DATABASE_URL | URL for connecting to database | `postgresql://postgres:${POSTGRES_PASSWORD}@localhost:5432/music_center?schema=public` |
+| POSTGRES_PASSWORD | Password for connecting to database | _any password you want_                                                                     |
+| DATABASE_URL      | URL for connecting to database      | `postgresql://postgres:${POSTGRES_PASSWORD}@localhost:5432/music_center?schema=public`      |
 | TEST_DATABASE_URL | URL for connecting to test database | `postgresql://postgres:${POSTGRES_PASSWORD}@localhost:5433/music_center_test?schema=public` |
 
 1. Open a terminal and navigate into the `server` directory
