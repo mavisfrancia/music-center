@@ -1,0 +1,16 @@
+.song-list {
+  max-width: 820px;
+  width: 100%;
+}
+
+.song-list__title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+
+  & > h1 {
+    font-size: 24px;
+    margin: 0;
+  }
+}

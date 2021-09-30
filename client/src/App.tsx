@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import styles from "./App.module.scss";
+import SongList from "./SongList";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className={styles.app}>
+      <header className={styles.header}>
+        <img src={logo} className={styles.logo} alt="logo" />
+        <nav className={styles.nav}>
+          <ul className={styles["nav__item--selected"]}>Songs</ul>
+          <ul>Setlists</ul>
+        </nav>
       </header>
+      <div className={styles.content}>
+        <SongList />
+      </div>
     </div>
   );
 }
