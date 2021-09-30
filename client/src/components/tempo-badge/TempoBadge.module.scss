@@ -1,0 +1,22 @@
+.tempo-badge {
+  padding: 4px 8px;
+  border-radius: 10px;
+  height: 24px;
+  display: inline;
+  font-size: 12px;
+}
+
+.tempo-badge--fast {
+  background-color: #fecce6;
+  color: #fa0082;
+}
+
+.tempo-badge--medium {
+  background-color: #ffe2cc;
+  color: #ff6e01;
+}
+
+.tempo-badge--slow {
+  background-color: #ccd8ff;
+  color: #003cff;
+}
