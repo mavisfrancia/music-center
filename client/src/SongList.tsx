@@ -7,7 +7,7 @@ import {
   TempoBadge,
 } from "./components";
 import styles from "./SongList.module.scss";
-import { GetSongsResponse, Song, Tempo } from "./types/songs";
+import { GetSongsResponse, Song } from "./types/songs";
 
 const SongList: React.FC = () => {
   const [songs, setSongs] = useState<Song[]>();
