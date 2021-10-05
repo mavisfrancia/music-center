@@ -1,9 +1,14 @@
 .table-row {
+  padding: 0 1em;
   display: grid;
   grid-template-columns: 6fr 4fr 2fr 3fr 1fr;
   height: 4em;
   align-items: center;
-  
+
+  &:hover:not(.table-row--heading) {
+    background-color: #e8e8ea;
+  }
+
   & > th {
     text-align: left;
     color: #615e69;

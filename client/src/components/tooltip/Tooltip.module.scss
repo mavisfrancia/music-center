@@ -1,0 +1,36 @@
+.container {
+  --opacity: 0;
+
+  display: inline-block;
+  position: relative;
+
+  &:hover {
+    --opacity: 1;
+  }
+}
+
+.tooltip {
+  pointer-events: none;
+  position: absolute;
+  bottom: calc(100% + 5px);
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: var(--opacity);
+  padding: 0.1em 0.5em;
+  border-radius: 0.33em;
+  background-color: #1d1929;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: opacity 250ms;
+}
+
+.tooltip::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: #1d1929;
+}
