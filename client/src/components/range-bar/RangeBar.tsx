@@ -13,22 +13,26 @@ const RangeBar: React.FC<Props> = ({ range, alternateRange }) => {
     : null;
 
   return (
-    <div className={styles["range-bar"]}>
-      <Tooltip text={`${mainRange}`}>
+    <Tooltip
+      text={
+        secondaryRangeExtension
+          ? `${mainRange}–${mainRange + secondaryRangeExtension}`
+          : `${mainRange}`
+      }
+    >
+      <div className={styles["range-bar"]}>
         <div
           className={styles["range-bar--main"]}
           style={{ minWidth: `${mainRange * 5}px` }}
         />
-      </Tooltip>
-      {secondaryRangeExtension && (
-        <Tooltip text={`${mainRange + secondaryRangeExtension}`}>
+        {secondaryRangeExtension && (
           <div
             className={styles["range-bar--secondary"]}
             style={{ minWidth: `${secondaryRangeExtension * 5}px` }}
           />
-        </Tooltip>
-      )}
-    </div>
+        )}
+      </div>
+    </Tooltip>
   );
 };
 
