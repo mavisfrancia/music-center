@@ -1,15 +1,15 @@
 .header {
-  height: 64px;
+  height: 5.33em;
   display: flex;
   align-items: center;
-  padding: 0px 24px;
+  padding: 0px 2em;
   background-color: white;
   box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.02);
 }
 
 .logo {
-  max-height: 16px;
-  margin-right: 32px;
+  max-height: 1.33em;
+  margin-right: 2.67em;
 }
 
 .nav {
@@ -17,14 +17,15 @@
   display: flex;
   align-items: center;
   & > ul {
+    color: #5a5a5a;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0px 16px;
+    padding: 0 1.33em;
     height: 100%;
     text-transform: uppercase;
     font-weight: bold;
-    font-size: 12px;
+    font-size: 1rem;
   }
   & > .nav__item--selected {
     color: #003cff;
@@ -36,5 +37,5 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 32px;
+  padding-top: 2.67em;
 }

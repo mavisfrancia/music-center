@@ -1,20 +1,19 @@
 .range-bar {
-  min-height: 13px;
+  min-height: 1.08em;
   position: relative;
 }
 
 .range-bar--main {
-  min-height: 13px;
+  min-height: 1.08em;
   background-color: #77757f;
   display: inline-block;
-  z-index: 5;
   position: absolute;
   top: 0;
   left: 0;
 }
 
 .range-bar--secondary {
-  min-height: 13px;
+  min-height: 1.08em;
   background-color: #d2d1d4;
   position: absolute;
   top: 0;

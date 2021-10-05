@@ -1,15 +1,18 @@
 .button {
-  height: 32px;
+  font-family: 'Nunito Sans';
+  font-size: 1rem;
+  font-weight: bold;
+  height: 2.67em;
   background-color: #003cff;
-  border-radius: 12px;
+  border-radius: 1em;
   cursor: pointer;
   border: none;
   color: white;
-  padding: 8px 16px;
+  padding: 0.67em 1.25em;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 0.67em;
 }
 
 .button:hover {
