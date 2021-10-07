@@ -1,7 +1,7 @@
 export enum Tempo {
-  FAST = "FAST",
-  MEDIUM = "MEDIUM",
-  SLOW = "SLOW",
+  FAST = 'FAST',
+  MEDIUM = 'MEDIUM',
+  SLOW = 'SLOW',
 }
 
 export type Song = {

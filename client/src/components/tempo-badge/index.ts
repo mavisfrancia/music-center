@@ -1,1 +1,1 @@
-export { default as TempoBadge } from "./TempoBadge";
+export { default as TempoBadge } from './TempoBadge';

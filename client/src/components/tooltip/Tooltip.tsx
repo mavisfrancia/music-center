@@ -1,5 +1,5 @@
-import React from "react";
-import styles from "./Tooltip.module.scss";
+import React from 'react';
+import styles from './Tooltip.module.scss';
 
 type Props = {
   text: string;

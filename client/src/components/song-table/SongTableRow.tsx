@@ -1,5 +1,5 @@
-import classcat from "classcat";
-import styles from "./SongTableRow.module.scss";
+import classcat from 'classcat';
+import styles from './SongTableRow.module.scss';
 
 type Props = {
   heading?: boolean;
@@ -7,8 +7,8 @@ type Props = {
 
 const TableRow: React.FC<Props> = ({ heading = false, children }) => {
   const className = classcat([
-    styles["table-row"],
-    { [styles["table-row--heading"]]: heading },
+    styles['table-row'],
+    { [styles['table-row--heading']]: heading },
   ]);
 
   return <tr className={className}>{children}</tr>;

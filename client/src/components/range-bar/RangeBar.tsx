@@ -1,5 +1,5 @@
-import styles from "./RangeBar.module.scss";
-import { Tooltip } from "../tooltip";
+import styles from './RangeBar.module.scss';
+import { Tooltip } from '../tooltip';
 
 type Props = {
   range: number;
@@ -20,14 +20,14 @@ const RangeBar: React.FC<Props> = ({ range, alternateRange }) => {
           : `${mainRange}`
       }
     >
-      <div className={styles["range-bar"]}>
+      <div className={styles['range-bar']}>
         <div
-          className={styles["range-bar--main"]}
+          className={styles['range-bar--main']}
           style={{ minWidth: `${mainRange * 5}px` }}
         />
         {secondaryRangeExtension && (
           <div
-            className={styles["range-bar--secondary"]}
+            className={styles['range-bar--secondary']}
             style={{ minWidth: `${secondaryRangeExtension * 5}px` }}
           />
         )}

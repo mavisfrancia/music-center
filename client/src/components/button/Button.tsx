@@ -1,5 +1,5 @@
-import styles from "./Button.module.scss";
-import { Plus } from "../../icons";
+import styles from './Button.module.scss';
+import { Plus } from '../../icons';
 
 type Props = React.DetailedHTMLProps<
   React.ButtonHTMLAttributes<HTMLButtonElement>,

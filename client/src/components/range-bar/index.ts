@@ -1,1 +1,1 @@
-export { default as RangeBar } from "./RangeBar";
+export { default as RangeBar } from './RangeBar';

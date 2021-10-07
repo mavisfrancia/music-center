@@ -1,18 +1,18 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 import {
   Button,
   RangeBar,
   SongTable,
   SongTableRow,
   TempoBadge,
-} from "./components";
-import styles from "./SongList.module.scss";
-import { GetSongsResponse, Song } from "./types/songs";
+} from '../components';
+import styles from './SongList.module.scss';
+import { GetSongsResponse, Song } from '../types/songs';
 
 const SongList: React.FC = () => {
   const [songs, setSongs] = useState<Song[]>();
   useEffect(() => {
-    fetch("http://localhost:5000/songs").then(async (response) => {
+    fetch('http://localhost:5000/songs').then(async (response) => {
       const data = (await response.json()) as GetSongsResponse;
       setSongs(data.songs);
       console.log(data);
@@ -20,8 +20,8 @@ const SongList: React.FC = () => {
   }, []);
 
   return (
-    <div className={styles["song-list"]}>
-      <div className={styles["song-list__title-row"]}>
+    <div className={styles['song-list']}>
+      <div className={styles['song-list__title-row']}>
         <h1>Songs</h1>
         <Button>New</Button>
       </div>
@@ -38,16 +38,16 @@ const SongList: React.FC = () => {
             ({ id, title, artist, tempo, range, alternativeRange, key }) => (
               <SongTableRow key={id}>
                 <td>{title}</td>
-                <td>{artist ?? "--"}</td>
-                <td>{tempo !== null ? <TempoBadge tempo={tempo} /> : "--"}</td>
+                <td>{artist ?? '--'}</td>
+                <td>{tempo !== null ? <TempoBadge tempo={tempo} /> : '--'}</td>
                 <td>
                   {range !== null ? (
                     <RangeBar range={range} alternateRange={alternativeRange} />
                   ) : (
-                    "--"
+                    '--'
                   )}
                 </td>
-                <td>{key ?? "--"}</td>
+                <td>{key ?? '--'}</td>
               </SongTableRow>
             )
           )}
