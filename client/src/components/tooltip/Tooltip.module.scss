@@ -1,0 +1,39 @@
+.container {
+  --opacity: 0;
+  --delay: 0ms;
+
+  display: inline-block;
+  position: relative;
+
+  &:hover {
+    --opacity: 1;
+    --delay: 100ms;
+  }
+}
+
+.tooltip {
+  width: max-content;
+  pointer-events: none;
+  position: absolute;
+  bottom: calc(100% + 5px);
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: var(--opacity);
+  padding: 0.15em 0.5em;
+  border-radius: 0.33em;
+  background-color: #1d1929;
+  color: white;
+  font-size: 0.95rem;
+  transition: opacity 250ms;
+  transition-delay: var(--delay);
+}
+
+.tooltip::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: #1d1929;
+}

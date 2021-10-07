@@ -1,7 +1,12 @@
 import styles from "./Button.module.scss";
 import { Plus } from "../../icons";
 
-const Button: React.FC = ({ children, ...rest }) => {
+type Props = React.DetailedHTMLProps<
+  React.ButtonHTMLAttributes<HTMLButtonElement>,
+  HTMLButtonElement
+>;
+
+const Button: React.FC<Props> = ({ children, ...rest }) => {
   return (
     <button className={styles.button} {...rest}>
       <Plus />
