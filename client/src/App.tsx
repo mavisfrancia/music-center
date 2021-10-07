@@ -1,6 +1,6 @@
-import logo from "./logo.svg";
-import styles from "./App.module.scss";
-import SongList from "./SongList";
+import logo from './logo.svg';
+import styles from './App.module.scss';
+import SongList from './pages/SongList';
 
 function App() {
   return (
@@ -8,7 +8,7 @@ function App() {
       <header className={styles.header}>
         <img src={logo} className={styles.logo} alt="logo" />
         <nav className={styles.nav}>
-          <ul className={styles["nav__item--selected"]}>Songs</ul>
+          <ul className={styles['nav__item--selected']}>Songs</ul>
           <ul>Setlists</ul>
         </nav>
       </header>
