@@ -1,0 +1,30 @@
+[data-reach-dialog-content].dialog {
+  padding: 0;
+  border-radius: 1em;
+  position: relative;
+}
+
+.dialog__header {
+  height: 4em;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & > h2 {
+    font-size: 1.5rem;
+  }
+}
+
+.dialog__body {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 1em 2.67em 2.67em 2.67em;
+}
+
+.dialog__close-button {
+  position: absolute;
+  top: 1.5em;
+  left: 1.5em;
+}

@@ -15,6 +15,16 @@
   gap: 0.67em;
 }
 
+.button--large {
+  width: 75%;
+  margin: auto;
+}
+
 .button:hover {
   background-color: #0030cc;
+}
+
+.button:disabled {
+  cursor: auto;
+  background-color: #91b1ff;
 }
