@@ -23,7 +23,7 @@ Set the following environment variables using your method of choice (e.g. by exp
 | DATABASE_URL      | URL for connecting to database      | `postgresql://postgres:${POSTGRES_PASSWORD}@localhost:5432/music_center?schema=public`      |
 | TEST_DATABASE_URL | URL for connecting to test database | `postgresql://postgres:${POSTGRES_PASSWORD}@localhost:5433/music_center_test?schema=public` |
 
-1. Open a terminal and navigate into the `server` directory
+1. Open a terminal and navigate into the `server` directory.
 2. Run `npm i`
 3. Run `docker-compose up` to start the server and database containers.
 4. Open another terminal and run `npm run db:init` to initialize the database.
@@ -35,3 +35,9 @@ At this point the application needs to restart in order to connect to the newly 
 If you have already successfully built the backend, you just need to run `docker-compose up` to start up the application again.
 
 Note: Running `docker-compose down` will remove the docker containers and images, i.e. all previous data in the database docker container will be lost, so make sure that's actually what you want to do.
+
+## Run the Frontend Application
+
+1. Open a terminal and navigate into the `client` directory.
+2. Run `npm i`
+3. Run `npm start` to start the application.
