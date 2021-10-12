@@ -3,10 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { SongsService, SongsServiceProvider } from './services/songs';
+
+const songsService = new SongsService();
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <SongsServiceProvider value={songsService}>
+      <App />
+    </SongsServiceProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,15 +1,22 @@
+import classcat from 'classcat';
 import styles from './Button.module.scss';
-import { Plus } from '../../icons';
 
-type Props = React.DetailedHTMLProps<
+export type Props = React.DetailedHTMLProps<
   React.ButtonHTMLAttributes<HTMLButtonElement>,
   HTMLButtonElement
->;
+> & {
+  size: 'medium' | 'large';
+};
 
-const Button: React.FC<Props> = ({ children, ...rest }) => {
+const Button: React.FC<Props> = ({ size, children, ...rest }) => {
   return (
-    <button className={styles.button} {...rest}>
-      <Plus />
+    <button
+      className={classcat([
+        styles.button,
+        { [styles['button--large']]: size === 'large' },
+      ])}
+      {...rest}
+    >
       {children}
     </button>
   );

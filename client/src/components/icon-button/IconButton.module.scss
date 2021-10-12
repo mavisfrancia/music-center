@@ -1,0 +1,19 @@
+.icon-button {
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  height: 2em;
+  width: 2em;
+  border-radius: 0.5em;
+  line-height: 0;
+
+  &:hover {
+    background-color: #e8e8ea;
+    color: white;
+  }
+
+  &:active {
+    background-color: #d2d1d4;
+    color: white;
+  }
+}

@@ -3,13 +3,13 @@ import { Tooltip } from '../tooltip';
 
 type Props = {
   range: number;
-  alternateRange: number | null;
+  alternativeRange: number | null;
 };
 
-const RangeBar: React.FC<Props> = ({ range, alternateRange }) => {
-  const mainRange = alternateRange ? Math.min(range, alternateRange) : range;
-  const secondaryRangeExtension = alternateRange
-    ? Math.abs(range - alternateRange)
+const RangeBar: React.FC<Props> = ({ range, alternativeRange }) => {
+  const mainRange = alternativeRange ? Math.min(range, alternativeRange) : range;
+  const secondaryRangeExtension = alternativeRange
+    ? Math.abs(range - alternativeRange)
     : null;
 
   return (

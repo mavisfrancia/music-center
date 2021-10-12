@@ -1,0 +1,75 @@
+.container {
+  margin-bottom: 1em;
+}
+
+.input__container {
+  position: relative;
+  height: 4em;
+  border-radius: 1em;
+  border: 1px solid #e8e8ea;
+  padding: 0 2em;
+
+  &:focus-within {
+    border-color: #003cff;
+  }
+}
+
+.input__container--disabled {
+  background-color: #f9f9f9;
+}
+
+.input__container--error,
+.input__container--error:focus-within {
+  border-color: #f42829;
+}
+
+.input {
+  width: 100%;
+  height: 2rem;
+  padding: 1rem 0 0 0;
+  font-family: 'Nunito Sans';
+  font-size: 1.2rem;
+  border: none;
+  outline: none;
+  transition: transform 200ms;
+
+  &:disabled {
+    background-color: transparent;
+  }
+
+  &::placeholder {
+    color: #a5a3a9;
+  }
+
+  &:not(:placeholder-shown) {
+    transform: translateY(0.625rem);
+  }
+}
+
+.input:placeholder-shown + label {
+  color: transparent;
+  transform: scale(1.2) translateY(1rem);
+}
+
+.input__label {
+  transform-origin: left center;
+  pointer-events: none;
+  position: absolute;
+  left: 2rem;
+  top: 0.5rem;
+  font-family: 'Nunito Sans';
+  transition: 200ms;
+  font-size: 1rem;
+  line-height: 1rem;
+  color: #a5a3a9;
+}
+
+.input__required-label {
+  font-size: 0.875rem;
+  color: #a5a3a9;
+}
+
+.input__error-label {
+  font-size: 0.875rem;
+  color: #f42829;
+}

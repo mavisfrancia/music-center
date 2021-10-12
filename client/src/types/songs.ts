@@ -18,3 +18,5 @@ export type GetSongsResponse = {
   count: number;
   songs: Song[];
 };
+
+export type CreateSongResponse = Song;
